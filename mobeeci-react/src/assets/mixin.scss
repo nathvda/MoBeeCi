@@ -1,0 +1,11 @@
+@mixin basic-page {
+  background-color: #ffc288;
+  width: 100%;
+  min-height: 100vh;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

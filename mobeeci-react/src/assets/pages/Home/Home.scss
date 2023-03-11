@@ -1,0 +1,21 @@
+@import "../../mixin.scss";
+.home {
+  @include basic-page;
+  @include center;
+  flex-direction: column;
+  .login-home,
+  .register-home {
+    border: none;
+    background-color: white;
+    margin: 2% 0;
+    font-size: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    width: 90%;
+  }
+}
