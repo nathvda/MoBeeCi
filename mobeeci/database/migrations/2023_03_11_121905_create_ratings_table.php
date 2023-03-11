@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('location_id')->reference('id')->on('locations')->onDelete('cascade');
-            $table->string('sensitive_rating');
-            $table->string('population_rating');
-            $table->string('pmr_rating');
+            $table->integer('sensitive_rating');
+            $table->integer('population_rating');
+            $table->integer('pmr_rating');
             $table->timestamps();
         });
     }

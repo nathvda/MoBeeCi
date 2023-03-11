@@ -17,7 +17,10 @@ class AccessibilityFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'pmr' => $this->faker->boolean,
+            'sensorial_sensitive' => $this->faker->boolean,
+            'population_tolerance' => $this->faker->boolean,
         ];
+
     }
 }
