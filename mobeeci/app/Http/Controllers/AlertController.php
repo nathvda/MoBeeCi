@@ -10,7 +10,7 @@ class AlertController extends Controller
 {
     public function index()
     {
-        return view('alert.index');
+        return view('alert.index', ['alerts' => Alert::latest()->get()]);
 
     }
 
