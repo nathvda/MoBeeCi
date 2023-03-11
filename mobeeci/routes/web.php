@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Location;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlertController;
 use App\Http\Controllers\LoginController;
@@ -18,7 +19,7 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['locations' => Location::get()]);
 });
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
@@ -42,21 +43,18 @@ Route::get('/suggestions/new', [SuggestController::class, 'create']);
 Route::post('/suggestions', [SuggestController::class, 'store']);
 
 /** Route de rating spécifique */
-Route::get('/ratings', [RatingController::class, 'index']);
-
-Route::post('/ratings', [RatingController::class, 'store']);
-
-/** Route de rating spécifique */
 Route::get('/locations', [LocationController::class, 'index']);
 
 Route::post('/locations', [LocationController::class, 'store']);
+
+Route::get('/profile', [LocationController::class, 'index']);
 
 Route::get('/flux', function(){
 
     // $opts = [
     //     "http" => [
     //         "method" => "GET",
-    //         "header" => array("Authorization:Bearer e278191a-072e-30c2-b821-3cff9fc4c2f6",
+    //         "header" => array("Authorization:Bearer $_ENV['PROXITOKEN']",
     //             "Accept:application/json",
     //             "Content-Type:application/json")
     //     ]
@@ -66,18 +64,18 @@ Route::get('/flux', function(){
     
     // $response = file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/geojson', false, $context);
 
-    $opts = [
-        "http" => [
-            "method" => "GET",
-            "header" => array("Authorization:Bearer e278191a-072e-30c2-b821-3cff9fc4c2f6",
-                "Accept:application/json",
-                "Content-Type:application/json")
-        ]
-    ];
+    // $opts = [
+    //     "http" => [
+    //         "method" => "GET",
+    //         "header" => array("Authorization:Bearer $_ENV['PROXITOKEN']",
+    //             "Accept:application/json",
+    //             "Content-Type:application/json")
+    //     ]
+    // ];
 
-    $context = stream_context_create($opts);
+    // $context = stream_context_create($opts);
     
-    return file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/', false, $context);
+    // return file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/', false, $context);
 
 
     // return response()->json([

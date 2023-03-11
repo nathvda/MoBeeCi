@@ -14,6 +14,12 @@ class RegisterController extends Controller
     {
         return view('register');
     }
+
+    public function index(){
+
+        return view('users.index', ['user' => User::find(auth()->user()->id)]);
+    }
+
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -35,4 +41,5 @@ class RegisterController extends Controller
         Auth::login($user);
         return redirect('/home');
     }
+
 }
