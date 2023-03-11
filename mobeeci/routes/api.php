@@ -6,6 +6,7 @@ use App\Http\Controllers\AlertController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\SuggestController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\AccessibilityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,9 @@ Route::get('/locations', [LocationController::class, 'index']);
 
 Route::middleware('auth:sanctum')->post('/locations', [LocationController::class, 'store']);
 
+/** Route d'accessibilities */
+Route::get('/accessibilities', [AccessibilityController::class, 'index']);
 
+Route::post('/accessibilities', [AccessibilityController::class, 'store']) ->name('accessibilities.store');
 
-
+// Route::middleware('auth:sanctum')->post('/accessibilities', [AccessibilityController::class, 'store'])->name('accessibilities.store');

@@ -22,7 +22,7 @@ class LoginController extends Controller{
         // Tentative de connexion de l'utilisateur
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Connexion réussie, redirection vers la page d'accueil ou une autre page de votre choix
-            return redirect('/home');
+            return redirect('/api/accessibilities');
         }
 
         // Échec de la connexion, redirection vers la page de connexion avec un message d'erreur
