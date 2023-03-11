@@ -47,7 +47,7 @@ Route::get('/locations', [LocationController::class, 'index']);
 
 Route::post('/locations', [LocationController::class, 'store']);
 
-Route::get('/profile', [LocationController::class, 'index']);
+Route::get('/profile', [RegisterController::class, 'index']);
 
 Route::get('/flux', function(){
 
