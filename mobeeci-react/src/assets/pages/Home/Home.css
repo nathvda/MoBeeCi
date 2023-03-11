@@ -1,0 +1,24 @@
+.home {
+  background-color: #ffc288;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home .login-home,
+.home .register-home {
+  border: none;
+  background-color: white;
+  margin: 2% 0;
+  font-size: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+.home a {
+  text-decoration: none;
+  color: black;
+  width: 90%;
+}/*# sourceMappingURL=Home.css.map */
