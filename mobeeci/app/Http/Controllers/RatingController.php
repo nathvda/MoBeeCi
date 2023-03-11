@@ -18,6 +18,12 @@ class RatingController extends Controller
         
     }
 
+    public function create(){
+
+        return view('rating.create');
+        
+    }
+
     public function store(CreateRatingRequest $request)
     {
         Rating::create([
