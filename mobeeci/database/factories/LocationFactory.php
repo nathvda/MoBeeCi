@@ -17,7 +17,9 @@ class LocationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'address' => $this->faker->streetAddress . ' ' . $this->faker->streetName,
+            'postal_code' => $this->faker->postcode,
         ];
+
     }
 }
