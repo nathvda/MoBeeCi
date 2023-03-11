@@ -10,7 +10,7 @@ class SuggestController extends Controller
 {
     public function index()
     {
-        return view('suggestions.index');
+        return view('suggestions.index', ['suggestions' => Suggest::latest()->get()]);
     }
 
     public function create(){
