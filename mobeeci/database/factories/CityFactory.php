@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Alert>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\City>
  */
-class AlertFactory extends Factory
+class CityFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,7 @@ class AlertFactory extends Factory
     public function definition(): array
     {
         return [
-            'type' => $this->faker->word(),
-            'description' => $this->faker->sentence(8),
-
+            'name' => $this->faker->word,
         ];
     }
 }

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('location_id')->reference('id')->on('locations')->onDelete('cascade');
-            $table->integer('sensitive_rating');
-            $table->integer('population_rating');
-            $table->integer('pmr_rating');
+            $table->string('name');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('cities');
     }
 };

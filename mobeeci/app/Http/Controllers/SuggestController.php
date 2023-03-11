@@ -10,11 +10,11 @@ class SuggestController extends Controller
 {
     public function index()
     {
-        $response = Suggest::latest()->get();
+        return view('suggestions.index');
+    }
 
-        return response()->json([
-            'suggestions' => $response
-        ], 200);
+    public function create(){
+        return view('suggestions.create');
     }
 
     public function store(CreateSuggestRequest $request)

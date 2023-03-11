@@ -10,12 +10,12 @@ class AlertController extends Controller
 {
     public function index()
     {
-        $response = Alert::latest()->get();
+        return view('alert.index');
 
-        return response()->json([
-            'alerts' => $response
-        ], 200);
-        
+    }
+
+    public function create(){
+        return view('alert.create');
     }
 
     public function store(CreateAlertRequest $request)
