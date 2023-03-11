@@ -16,4 +16,24 @@ class Location extends Model
         'city',
         'postal_code'
     ];
+
+    public function suggest()
+    {
+        return $this->hasMany(Suggest::class);
+    }
+
+    public function rating()
+    {
+        return $this->hasMany(Rating::class);
+    }
+
+    public function alert()
+    {
+        return $this->hasMany(Alert::class);
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
 }

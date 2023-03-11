@@ -16,4 +16,9 @@ class Alert extends Model
         'description',
         'location_id'
     ];
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
 }
