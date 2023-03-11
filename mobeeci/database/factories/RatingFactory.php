@@ -17,9 +17,10 @@ class RatingFactory extends Factory
     public function definition(): array
     {
         return [
-            'sensitive_rating' => $this->faker->randomNumber(5),
-            'population_rating' => $this->faker->randomNumber(5),
-            'pmr_rating' => $this->faker->randomNumber(5),
+            'sensitive_rating' => $this->faker->numberBetween(1, 5),
+            'population_rating' => $this->faker->numberBetween(1, 5),
+            'pmr_rating' => $this->faker->numberBetween(1, 5),
+            'location_id' => $this->faker->numberBetween(1, 10)
         ];
     }
 }
