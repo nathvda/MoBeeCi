@@ -18,4 +18,9 @@ class Rating extends Model
         'pmr_rating'
     ];
 
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
 }
