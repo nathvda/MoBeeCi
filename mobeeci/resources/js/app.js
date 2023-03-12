@@ -1,6 +1,7 @@
-import './bootstrap';
+import "./bootstrap";
+import "./bootstrap";
 
-let buttons = document.getElementById('nav_bar');
+let buttons = document.getElementById("nav_bar");
 
 buttons.addEventListener('change', (e) => {
 

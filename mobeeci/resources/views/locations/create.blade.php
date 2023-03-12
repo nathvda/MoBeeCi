@@ -8,6 +8,7 @@
     @vite(['resources/scss/locations.scss', 'resources/js/app.js'])
     <title>MoBeeCi - Ajouts d'un lieu</title>
 </head>
+
 <body>
     <section>
         <h2>Ajout d'un lieu</h2>
@@ -17,21 +18,21 @@
         <input type="text">
         <div class="star">
             <svg width="50" height="50" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FF942F"/>
+                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FF942F" />
             </svg>
             <svg width="50" height="50" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FF942F"/>
+                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FF942F" />
             </svg>
             <svg width="50" height="50" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FF942F"/>
-            </svg>
-
-            <svg width="50" height="50" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FFF"/>
+                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FF942F" />
             </svg>
 
             <svg width="50" height="50" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FFF"/>
+                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FFF" />
+            </svg>
+
+            <svg width="50" height="50" viewBox="0 0 53 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.5 0L32.6741 19.002H52.6541L36.49 30.7459L42.6641 49.748L26.5 38.0041L10.3359 49.748L16.51 30.7459L0.345945 19.002H20.3259L26.5 0Z" fill="#FFF" />
             </svg>
         </div>
 
@@ -44,4 +45,5 @@
 
     </section>
 </body>
+
 </html>
