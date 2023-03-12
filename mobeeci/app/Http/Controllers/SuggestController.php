@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Suggest;
+use App\Models\Location;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateSuggestRequest;
 
@@ -14,11 +15,12 @@ class SuggestController extends Controller
     }
 
     public function create(){
-        return view('suggestions.create');
+        return view('suggestions.create', ['locations' => Location::get()]);
     }
 
     public function store(CreateSuggestRequest $request)
     {
+        dd($request);
         Suggest::create([
             'description' => $request['description'],
             'location_id' => $request['location_id'],

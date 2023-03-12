@@ -9,13 +9,20 @@
 </head>
 <body>
 <x-nav />
+<div class="toolbox">
+    <a href="/suggestions/new">Suggestions</a>
+    <a href="/locations/new">Lieu</a>
+    <a href="/alerts/new">Alertes</a>
+</div>
 <div class="maps">
 
-<img src="/images/Fond_de_plan_300.png"/>    
-<img src="/images/couche_bruit.png"/>    
-<img src="/images/couche_lumiere.png"/>
-<img src="/images/couche_accessibilite_pmr.png"/> 
+<img src="/images/Fond_de_plan_300.png"/>   
+<img class="layer" src="/images/couche_bruit.png"/>    
+<img class="layer" src="/images/couche_lumiere.png"/>
+<img class="layer" src="/images/couche_accessibilite_pmr.png"/>
 <img src="/images/Nom_Rue_sans_fond.svg.png"/>
+
+
 
 </div>
 

@@ -13,4 +13,8 @@ html, body, li, ul{
         position:absolute;
         z-index:1;
     }
+
+    img.visible{
+        display:none;
+    }
 }
