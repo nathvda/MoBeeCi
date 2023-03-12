@@ -60,3 +60,21 @@ html, body, li, ul{
 .hide{
     display:none;
 }
+
+.scale {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 99;
+	flex-direction: column;
+	display: flex;
+	gap: 1rem;
+}
+
+.scale span {
+	background-color: white;
+	display: block;
+	padding: 0.7rem;
+	border: 1px solid #919191;
+	border-radius: 0.1rem;
+}

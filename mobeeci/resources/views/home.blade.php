@@ -21,12 +21,13 @@
     <a href="/alerts">Liste des alertes</a>
 
 </div>
-<div class="maps">
+<div class="scale"><span>+</span><span>-</span></div>
 
+<div class="maps">
 <img src="/images/Fond_de_plan_300.png"/>   
-<img class="layer" src="/images/couche_bruit.png"/>    
-<img class="layer" src="/images/couche_lumiere.png"/>
-<img class="layer" src="/images/couche_accessibilite_pmr.png"/>
+<img class="layer" src="/images/couche_bruit.png" style="display:none;"/>    
+<img class="layer" src="/images/couche_lumiere.png" style="display:none;"/>
+<img class="layer" src="/images/couche_accessibilite_pmr.png" style="display:none;"/>
 <img src="/images/Nom_Rue_sans_fond.svg.png"/>
 
 

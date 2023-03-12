@@ -29,11 +29,11 @@ Route::get('/home', function(){
     return view('home');
 },  ['locations' => Location::get()])->middleware('auth');
 
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('guest');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/register', [RegisterController::class, 'register'])->middleware('guest');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
 Route::post('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 

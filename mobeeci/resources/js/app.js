@@ -22,3 +22,9 @@ let burger = document.querySelector(".menuburger");
 burger.addEventListener('click', (e) => {
         document.querySelector(".toolbox").classList.toggle("hide");
 });
+
+let modal = document.getElementById('authorization');
+
+window.addEventListener('load', () => {
+        modal.showModal();
+})
