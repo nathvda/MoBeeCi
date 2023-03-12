@@ -1,0 +1,79 @@
+@import "./mixin.scss";
+
+body{
+    @include basic-page;
+    .top-profil{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3vh; 
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(3, 3, 3, 0.75), rgba(0, 0, 0, 0));
+    }
+    
+    .about-profil, .profil{
+        margin: 0;
+    }
+
+    .top-information{
+        margin-top: 8vw;
+    }
+
+    .main-information{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vw;
+    }
+
+    h2{
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    input{
+        border: none;
+        margin: 2% 0;
+        padding: 2.5vw;
+        border-radius: 5px;
+    }
+    
+    input:focus{
+        outline: black solid 1px;
+    }
+
+    button{
+        width: 50%;
+        border: none;
+        border-radius: 2vw;
+        padding: 2vw;
+        margin-top: 2vw;
+    }
+
+    .main-help{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .prm{
+        margin-left: 3vw;
+    }
+
+    .svg{
+        height: 5vw;
+
+    }
+    .criteria{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5vw;
+    }
+
+}

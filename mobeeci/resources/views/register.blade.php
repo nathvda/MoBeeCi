@@ -1,31 +1,40 @@
-<form method="POST" action="{{ route('register') }}">
-    @csrf
-    <div>
-        <label>Adresse e-mail</label>
-        <input id="email" type="text" name="email" required>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div>
-        <label>Mot de passe:</label>
-        <input id="password" type="password" name="password" required>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite(['resources/scss/register.scss', 'resources/js/app.js'])
+    <title>Document</title>
+</head>
 
-    <div>
-        <label for="password_confirmation">Confirmation du mot de passe</label>
-        <input id="password_confirmation" type="password" name="password_confirmation" required>
-    </div>
+<body>
+    <x-logo />
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <label htmlFor="password">Password</label>
+        <input type="password" id="password" name="password" />
+        <label htmlFor="password_confirmation">Confirm password</label>
+        <input type="password" id="password_confirmation" name="password_confirmation" />
+        <button type="submit">
+            <b>Confirm</b>
+        </button>
 
-    <button type="submit">S'inscrire</button>
-
-    @if ($errors->has('email'))
+        @if ($errors->has('email'))
         <div>
             {{ $errors->first('email') }}
         </div>
-    @endif
+        @endif
 
-    @if ($errors->has('password'))
+        @if ($errors->has('password'))
         <div>
             {{ $errors->first('password') }}
         </div>
-    @endif
-</form>
+        @endif
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+@import "./mixin.scss";
+
+body {
+    @include basic-page;
+    @include center;
+    position: relative;
+    flex-direction: column;
+    .login-home,
+    .register-home {
+        border: none;
+        background-color: white;
+        margin: 2% 0;
+        font-size: 50px;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        width: 90%;
+    }
+    .logo-brand {
+        position: absolute;
+        width: 6rem;
+        top: 2rem;
+    }
+}
+img {
+    width: 25%;
+}

@@ -7,6 +7,7 @@ use App\Http\Controllers\AlertController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SuggestController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LocationController;
 
 /*
 |--------------------------------------------------------------------------
