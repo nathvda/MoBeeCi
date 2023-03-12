@@ -56,6 +56,5 @@
             </div>
         </div>
     </section>
-    <x-nav />
 </body>
 </html>
