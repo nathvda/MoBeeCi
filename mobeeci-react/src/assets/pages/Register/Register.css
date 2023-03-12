@@ -1,0 +1,35 @@
+.register-page {
+  background-color: #ffc288;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-page form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+.register-page form input,
+.register-page form button {
+  width: 100%;
+  border: none;
+  margin: 2% 0;
+  border-radius: 5px;
+  height: 75.2px;
+}
+.register-page form input {
+  font-size: 25px;
+  padding-left: 10px;
+}
+.register-page form button {
+  font-size: 50px;
+  width: 103%;
+}
+.register-page form label {
+  align-self: flex-start;
+  font-size: 20px;
+}/*# sourceMappingURL=Register.css.map */

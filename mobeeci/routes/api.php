@@ -6,6 +6,7 @@ use App\Http\Controllers\AlertController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\SuggestController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\AccessibilityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,31 @@ use App\Http\Controllers\LocationController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+/** Route d'alertes spécifique */
+Route::get('/alerts', [AlertController::class, 'index']);
+
+Route::middleware('auth:sanctum')->post('/alerts', [AlertController::class, 'store']);
+
+/** Route de suggestions spécifique */
+Route::get('/suggestions', [SuggestController::class, 'index']);
+
+Route::middleware('auth:sanctum')->post('/suggestions', [SuggestController::class, 'store']);
+
+/** Route de rating spécifique */
+Route::get('/ratings', [RatingController::class, 'index']);
+
+Route::middleware('auth:sanctum')->post('/ratings', [RatingController::class, 'store']);
+
+/** Route de rating spécifique */
+Route::get('/locations', [LocationController::class, 'index']);
+
+Route::middleware('auth:sanctum')->post('/locations', [LocationController::class, 'store']);
+
+/** Route d'accessibilities */
+Route::get('/accessibilities', [AccessibilityController::class, 'index']);
+
+Route::post('/accessibilities', [AccessibilityController::class, 'store']) ->name('accessibilities.store');
+
+// Route::middleware('auth:sanctum')->post('/accessibilities', [AccessibilityController::class, 'store'])->name('accessibilities.store');

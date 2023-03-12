@@ -1,0 +1,36 @@
+.login-page {
+  background-color: #ffc288;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-page form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+.login-page form .email,
+.login-page form .password,
+.login-page form .login {
+  width: 100%;
+  border: none;
+  margin: 2% 0;
+  border-radius: 5px;
+  height: 75.2px;
+}
+.login-page form .email .password {
+  font-size: 25px;
+  padding-left: 10px;
+}
+.login-page form .login {
+  font-size: 50px;
+  width: 100%;
+}
+.login-page form label {
+  align-self: flex-start;
+  font-size: 20px;
+}/*# sourceMappingURL=Login.css.map */

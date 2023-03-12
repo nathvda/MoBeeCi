@@ -18,6 +18,10 @@ class LocationController extends Controller
         
     }
 
+    public function create(){
+        return view('locations.create');
+    }
+
     public function store(CreateLocationRequest $request)
     {
         Location::create([
