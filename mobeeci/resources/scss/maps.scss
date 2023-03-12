@@ -1,0 +1,16 @@
+html, body, li, ul{
+    padding:0;
+    margin:0;
+    height:100dvh;
+    position:relative;
+    overflow:hidden;
+}
+
+.maps{
+    position:relative;
+
+    img{
+        position:absolute;
+        z-index:1;
+    }
+}
