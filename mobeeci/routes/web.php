@@ -6,6 +6,7 @@ use App\Http\Controllers\AlertController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SuggestController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,8 @@ Route::post('/suggestions', [SuggestController::class, 'store']);
 /** Route de rating spécifique */
 Route::get('/locations', [LocationController::class, 'index']);
 
+Route::get('/locations', [LocationController::class, 'create']);
+ 
 Route::post('/locations', [LocationController::class, 'store']);
 
 Route::get('/profile', [RegisterController::class, 'index']);
