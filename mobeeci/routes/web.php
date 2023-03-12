@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccessibilityController;
 use App\Models\Location;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,12 @@ use App\Http\Controllers\LocationController;
 */
 
 Route::get('/', function () {
-    return view('welcome', ['locations' => Location::get()]);
+    return view('welcome');
 })->middleware('auth');
+
+Route::get('/home', function(){
+    return view('home');
+},  ['locations' => Location::get()])->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('guest');
 
@@ -53,7 +58,7 @@ Route::post('/locations', [LocationController::class, 'store'])->middleware('aut
 
 Route::get('/profile', [RegisterController::class, 'index'])->middleware('auth');
 
-Route::get('/preferences', [RegisterController::class, 'index'])->middleware('auth');
+Route::get('/preferences', [AccessibilityController::class, 'index'])->middleware('auth');
 
 Route::get('/flux', function(){
     $env = $_ENV['PROXITOKEN'];
