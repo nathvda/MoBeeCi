@@ -2,35 +2,114 @@
 
 body {
     @include basic-page;
-    @include center;
+
     form {
-        @include center;
-        flex-direction: column;
-        width: 90%;
+
         input,
         button {
             width: 100%;
             border: none;
-            margin: 2% 0;
-            border-radius: 5px;
-            height: 75.2px;
+            border-radius: 50px;
+            margin-top: 10px;
+            height: 50px;
+            font-size: 30px;
+            text-align: center;
         }
+
+        .logo_wrapper {
+            display: flex;
+            align-items: center;
+        }
+
         input {
             font-size: 25px;
             padding-left: 10px;
+            border-radius: 50px;
         }
+
         button {
             font-size: 50px;
-            width: 103%;
         }
+
         label {
             align-self: flex-start;
             font-size: 20px;
         }
     }
+
     .logo-brand {
-        position: absolute;
+        position: relative;
         top: 0;
         width: 200px;
+        padding-top: 20px;
+        margin-top: 20px
     }
+
+    section {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    @include basic-page;
+    margin: 0;
+    padding: 0;
+
+    .logo_wrapper {
+        display: flex;
+        align-content: center;
+    }
+
+    form {
+        @include center;
+        flex-direction: column;
+        width: 90%;
+        padding-bottom: 20px;
+
+        .email,
+        .password,
+        .login {
+            width: 100%;
+            border: none;
+            margin: 2% 0;
+            border-radius: 50px;
+            height: 50px;
+        }
+
+        .email .password {
+            border-radius: 50px;
+            font-size: 25px;
+            padding-left: 10px;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .register {
+            margin-top: 30px;
+            font-size: 30px;
+            width: 100%;
+            border-radius: 50px;
+        }
+
+        label {
+            align-self: flex-start;
+            font-size: 20px;
+        }
+    }
+
+    .logo-brand {
+        position: relative;
+        width: 200px;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    input {
+        border-radius: 50px;
+    }
+
+
 }
