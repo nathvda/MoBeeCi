@@ -3,13 +3,13 @@
 body {
     @include basic-page;
 
-    section{
+    section {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    h2{
+    h2 {
         text-align: center;
         border-bottom: 1px solid black;
         width: 75%;
@@ -18,10 +18,15 @@ body {
     hr {
         border: 0;
         height: 1px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(3, 3, 3, 0.75), rgba(0, 0, 0, 0));
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0),
+            rgba(3, 3, 3, 0.75),
+            rgba(0, 0, 0, 0)
+        );
     }
 
-    input{
+    input {
         border: none;
         padding: 2.5vw;
         border-radius: 5px;
@@ -29,15 +34,15 @@ body {
         margin: 3vw;
     }
 
-    input:focus{
+    input:focus {
         outline: black solid 1px;
     }
 
-    .star{
+    .star {
         margin: 3vw;
     }
 
-    button{
+    button {
         border: none;
         background-color: rgb(36, 36, 36);
         color: white;
@@ -48,11 +53,11 @@ body {
         cursor: pointer;
     }
 
-    .help{
+    .help {
         margin: 0;
     }
 
-    .footer{
+    .footer {
         width: 100%;
         display: flex;
         flex-direction: column;
