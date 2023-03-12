@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alert;
+use App\Models\Location;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateAlertRequest;
 
@@ -15,7 +16,7 @@ class AlertController extends Controller
     }
 
     public function create(){
-        return view('alert.create');
+        return view('alert.create', ['locations' => Location::get()]);
     }
 
     public function store(CreateAlertRequest $request)

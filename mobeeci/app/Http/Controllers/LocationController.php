@@ -22,6 +22,13 @@ class LocationController extends Controller
         return view('locations.create');
     }
 
+    public function show($id){
+        return view('locations.show', ['location' => Location::find($id), 
+        'pmr_rating' => Location::find($id)->rating->avg('pmr_rating'),
+        'sensitive_rating' => Location::find($id)->rating->avg('sensitive_rating'),
+        'population_rating' => Location::find($id)->rating->avg('population_rating')]);    }
+
+
     public function store(CreateLocationRequest $request)
     {
         Location::create([
