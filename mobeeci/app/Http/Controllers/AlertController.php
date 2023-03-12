@@ -26,5 +26,7 @@ class AlertController extends Controller
             'description' => $request['description'],
             'location_id' => $request['location_id']
         ]);
+
+        return redirect('/alerts');
     }
 }

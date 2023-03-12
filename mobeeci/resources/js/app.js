@@ -15,3 +15,10 @@ buttons.addEventListener('change', (e) => {
         }
         });
 })
+
+
+let burger = document.querySelector(".menuburger");
+
+burger.addEventListener('click', (e) => {
+        document.querySelector(".toolbox").classList.toggle("hide");
+});

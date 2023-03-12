@@ -20,7 +20,7 @@
         <label htmlFor="password_confirmation">Confirm password</label>
         <input type="password" id="password_confirmation" name="password_confirmation" />
         <button type="submit">
-            <b>Confirm</b>
+        <b>Confirm</b>
         </button>
 
         @if ($errors->has('email'))

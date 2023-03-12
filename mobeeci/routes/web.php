@@ -54,7 +54,7 @@ Route::post('/suggestions', [SuggestController::class, 'store'])->middleware('au
 /** Route de rating spécifique */
 Route::get('/locations', [LocationController::class, 'index'])->middleware('auth');
 
-Route::get('/locations/{location}', [LocationController::class, 'show'])->middleware('auth');
+Route::get('/locations/view/{location}', [LocationController::class, 'show'])->middleware('auth');
 
 Route::get('/locations/new', [LocationController::class, 'create'])->middleware('auth');
 
@@ -67,66 +67,66 @@ Route::get('/preferences', [AccessibilityController::class, 'index'])->middlewar
 Route::get('/flux', function(){
     $env = $_ENV['PROXITOKEN'];
 
-    $opts = [
-        "http" => [
-            "method" => "GET",
-            "header" => array("Authorization:Bearer $env",
-                "Accept:application/json",
-                "Content-Type:application/json")
-        ]
-    ];
-
-    $context = stream_context_create($opts);
-    
-    $response = file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/geojson', false, $context);
-
-    $infos = json_decode($response, true);
-
-    // dd($infos);
-
-    $stuff = json_decode(config('const'), true);
-
-        $gridData = [];
-
-        foreach($infos['features'] as $res=>$value){
-
-            $gridCell = [];
-            
-            echo $value['properties']['cellcode'] . "<br>";
-            echo $stuff['data'][$res]['binId'] . "<br>";
-
-            $density =  $stuff['data'][$res]['national'] + $stuff['data'][$res]['international'];
-
-            if  ($density >= 150){
-                echo 'Dangerously numerous people'  . "<br>";
-            } else if ($density >= 80){
-                echo 'Too many people'  . "<br>";
-            } else if ($density >= 20){
-                echo 'Okay time' . "<br>";
-            }
-
-            $gridCell = $value['geometry']['coordinates'][0];
-
-
-            $gridData[] = $gridCell;
-
-        }
-
-        dd($gridData);
-
-
-    // $spouet = [
+    // $opts = [
     //     "http" => [
     //         "method" => "GET",
-    //         "header" => array("")
+    //         "header" => array("Authorization:Bearer $env",
+    //             "Accept:application/json",
+    //             "Content-Type:application/json")
     //     ]
     // ];
 
-    // $context = stream_context_create($spouet);
+    // $context = stream_context_create($opts);
     
-    // $doudou = file_get_contents('https://kara.rest/bin/e57fb926-f926-403f-b7a2-90a50d59b451', true);  
+    // $response = file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/geojson', false, $context);
+
+    // $infos = json_decode($response, true);
+
+    // // dd($infos);
+
+    // $stuff = json_decode(config('const'), true);
+
+    //     $gridData = [];
+
+    //     foreach($infos['features'] as $res=>$value){
+
+    //         $gridCell = [];
+            
+    //         echo $value['properties']['cellcode'] . "<br>";
+    //         echo $stuff['data'][$res]['binId'] . "<br>";
+
+    //         $density =  $stuff['data'][$res]['national'] + $stuff['data'][$res]['international'];
+
+    //         if  ($density >= 150){
+    //             echo 'Dangerously numerous people'  . "<br>";
+    //         } else if ($density >= 80){
+    //             echo 'Too many people'  . "<br>";
+    //         } else if ($density >= 20){
+    //             echo 'Okay time' . "<br>";
+    //         }
+
+    //         $gridCell = $value['geometry']['coordinates'][0];
+
+
+    //         $gridData[] = $gridCell;
+
+    //     }
+
+    //     dd($gridData);
+
+
+    $spouet = [
+        "http" => [
+            "method" => "GET",
+            "header" => array("")
+        ]
+    ];
+
+    $context = stream_context_create($spouet);
     
-    // dd($doudou);
+    $doudou = file_get_contents('https://kara.rest/bin/e57fb926-f926-403f-b7a2-90a50d59b451', true);  
+    
+    dd($doudou);
 
     // $opts = [
     //     "http" => [

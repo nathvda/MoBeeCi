@@ -20,11 +20,12 @@ class SuggestController extends Controller
 
     public function store(CreateSuggestRequest $request)
     {
-        dd($request);
         Suggest::create([
             'description' => $request['description'],
             'location_id' => $request['location_id'],
             'category' => $request['category']
         ]);
+
+        return redirect('/suggestions');
     }
 }

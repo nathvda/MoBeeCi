@@ -18,3 +18,45 @@ html, body, li, ul{
         display:none;
     }
 }
+
+.toolbox {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	gap: 1rem;
+	position: absolute;
+	z-index: 6;
+	background-color: white;
+	color: #202020;
+    left:6rem;
+}
+
+.toolbox a {
+	color: #202020;
+	text-decoration: none;
+	font-family: poppins;
+	font-size: 1rem;
+}
+
+.menuburger{
+    position:absolute;
+    top:1rem;
+    z-index:99;
+    background-color:white; 
+    padding:1rem;
+    border:none;
+    width:5rem;
+    aspect-ratio:1/1;
+    border-radius:5rem;
+    left:1rem;
+
+    path{
+        height:5rem;
+        width:5rem;
+    }
+
+}
+
+.hide{
+    display:none;
+}
