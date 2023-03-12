@@ -1,3 +1,6 @@
+@vite(['resources/scss/navbar.scss', 'resources/js/app.js'])
+
+
 <div class="nav-bar">
     <img class="logo-bruit" src="{{asset('assets/Logo_bruit.png')}}" alt="">
     <img class="logo-foule" src="{{asset('assets/Logo_foule.png')}}" alt="">
