@@ -23,7 +23,6 @@
             <b>Register</b>
         </button>
     </a>
-    <x-nav />
 </body>
 
 </html>

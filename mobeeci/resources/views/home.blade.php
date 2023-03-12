@@ -11,7 +11,8 @@
 <x-nav />
 <div class="toolbox">
     <a href="/suggestions/new">Suggestions</a>
-    <a href="/location/new">Lieu</a>
+    <a href="/locations/new">Lieu</a>
+    <a href="/alerts/new">Alertes</a>
 </div>
 <div class="maps">
 

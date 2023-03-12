@@ -54,6 +54,8 @@ Route::post('/suggestions', [SuggestController::class, 'store'])->middleware('au
 /** Route de rating spécifique */
 Route::get('/locations', [LocationController::class, 'index'])->middleware('auth');
 
+Route::get('/locations/{location}', [LocationController::class, 'show'])->middleware('auth');
+
 Route::get('/locations/new', [LocationController::class, 'create'])->middleware('auth');
 
 Route::post('/locations', [LocationController::class, 'store'])->middleware('auth');
