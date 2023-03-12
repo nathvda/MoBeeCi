@@ -10,31 +10,39 @@
 </head>
 
 <body>
-    <x-logo />
+
+<section class="login_wrapper">
+    <div class="logo_wrapper">
+
+        <x-logo/>
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <label for="email">Email</label>
         <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password</label>
+        <label for="password">Password</label>
         <input type="password" id="password" name="password" />
-        <label htmlFor="password_confirmation">Confirm password</label>
+        <label for="password_confirmation">Confirm password</label>
         <input type="password" id="password_confirmation" name="password_confirmation" />
-        <button type="submit">
-        <b>Confirm</b>
+        <button class="register" type="submit">
+            Confirm
         </button>
 
         @if ($errors->has('email'))
-        <div>
-            {{ $errors->first('email') }}
-        </div>
+            <div>
+                {{ $errors->first('email') }}
+            </div>
         @endif
 
         @if ($errors->has('password'))
-        <div>
-            {{ $errors->first('password') }}
-        </div>
+            <div>
+                {{ $errors->first('password') }}
+            </div>
         @endif
     </form>
+</section>
+
+
 </body>
 
 </html>
