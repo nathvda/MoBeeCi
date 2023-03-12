@@ -11,6 +11,8 @@
 <body>
     <section>
         <h2>Ajout d'un lieu</h2>
+        <form method="post" action="/locations/">
+            @csrf
         <p class="main-title"><b>Nom de l'établissement</b></p>
         <input type="text">
         <div class="star">
@@ -36,7 +38,8 @@
         <div class="footer">
             <p class="help">Clique sur l'étoile pour</p>
             <p class="help">attribuer une note.</p>
-            <button><b>Envoyer</b></button>
+            <button type="submit"><b>Envoyer</b></button>
+            </form>
         </div>
 
     </section>
