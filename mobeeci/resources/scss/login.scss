@@ -1,39 +1,69 @@
 @import "./mixin.scss";
 
 body {
+
+    section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
     @include basic-page;
-    @include center;
     margin: 0;
     padding: 0;
+
+    .logo_wrapper {
+        display: flex;
+        align-content: center;
+    }
+
     form {
         @include center;
         flex-direction: column;
         width: 90%;
+
         .email,
         .password,
         .login {
             width: 100%;
             border: none;
             margin: 2% 0;
-            border-radius: 5px;
-            height: 75.2px;
+            border-radius: 50px;
+            height: 50px;
         }
+
         .email .password {
+            border-radius: 50px;
             font-size: 25px;
             padding-left: 10px;
         }
-        .login {
-            font-size: 50px;
-            width: 100%;
+
+        label{
+            margin-left: 20px;
         }
+
+        .login {
+            margin: 10px;
+            font-size: 30px;
+            width: 100%;
+            border-radius: 50px;
+        }
+
         label {
             align-self: flex-start;
             font-size: 20px;
         }
     }
+
     .logo-brand {
-        position: absolute;
+        position: relative;
         top: 0;
         width: 200px;
+        padding-top: 20px;
+        margin-top: 20px;
     }
+
+    input{
+        border-radius: 50px;
+    }
+
 }

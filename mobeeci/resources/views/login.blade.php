@@ -10,18 +10,22 @@
 </head>
 
 <body>
-    <x-logo />
+<section class="login_wrapper">
+    <div class="logo_wrapper">
+
+        <x-logo/>
+    </div>
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        <label htmlFor="email">Email</label>
-        <input class="email" type="email" name="email" id="email" />
-        <label htmlFor="password">Password</label>
-        <input class="password" type="password" name="password" id="password" />
+        <label for="email">Email</label>
+        <input class="email" type="email" name="email" id="email"/>
+        <label for="password">Mot de passe</label>
+        <input class="password" type="password" name="password" id="password"/>
         <button class="login" type="submit">
-            <b>Login</b>
+            <b>Connexion</b>
         </button>
     </form>
-
+</section>
 </body>
 
 </html>
