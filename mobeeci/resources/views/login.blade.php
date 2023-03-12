@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <x-logo />
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <label htmlFor="email">Email</label>
