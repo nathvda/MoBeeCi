@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Location;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlertController;
 use App\Http\Controllers\LoginController;
@@ -20,49 +21,102 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('welcome', ['locations' => Location::get()]);
-});
+})->middleware('auth');
 
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('guest');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/register', [RegisterController::class, 'register'])->middleware('guest');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+
+Route::post('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 
 /** Route d'alertes spécifique */
-Route::get('/alerts', [AlertController::class, 'index']);
+Route::get('/alerts', [AlertController::class, 'index'])->middleware('auth');
 
-Route::get('/alerts/new', [AlertController::class, 'create']);
+Route::get('/alerts/new', [AlertController::class, 'create'])->middleware('auth');
 
-Route::post('/alerts', [AlertController::class, 'store']);
+Route::post('/alerts', [AlertController::class, 'store'])->middleware('auth');
 
 /** Route de suggestions spécifique */
-Route::get('/suggestions', [SuggestController::class, 'index']);
+Route::get('/suggestions', [SuggestController::class, 'index'])->middleware('auth');
 
-Route::get('/suggestions/new', [SuggestController::class, 'create']);
+Route::get('/suggestions/new', [SuggestController::class, 'create'])->middleware('auth');
 
-Route::post('/suggestions', [SuggestController::class, 'store']);
+Route::post('/suggestions', [SuggestController::class, 'store'])->middleware('auth');
 
 /** Route de rating spécifique */
-Route::get('/locations', [LocationController::class, 'index']);
+Route::get('/locations', [LocationController::class, 'index'])->middleware('auth');
 
-Route::post('/locations', [LocationController::class, 'store']);
+Route::post('/locations', [LocationController::class, 'store'])->middleware('auth');
 
-Route::get('/profile', [RegisterController::class, 'index']);
+Route::get('/profile', [RegisterController::class, 'index'])->middleware('auth');
+
+Route::get('/preferences', [RegisterController::class, 'index'])->middleware('auth');
 
 Route::get('/flux', function(){
+    $env = $_ENV['PROXITOKEN'];
 
-    // $opts = [
+    $opts = [
+        "http" => [
+            "method" => "GET",
+            "header" => array("Authorization:Bearer $env",
+                "Accept:application/json",
+                "Content-Type:application/json")
+        ]
+    ];
+
+    $context = stream_context_create($opts);
+    
+    $response = file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/geojson', false, $context);
+
+    $infos = json_decode($response, true);
+
+    // dd($infos);
+
+    $stuff = json_decode(config('const'), true);
+
+        $gridData = [];
+
+        foreach($infos['features'] as $res=>$value){
+
+            $gridCell = [];
+            
+            echo $value['properties']['cellcode'] . "<br>";
+            echo $stuff['data'][$res]['binId'] . "<br>";
+
+            $density =  $stuff['data'][$res]['national'] + $stuff['data'][$res]['international'];
+
+            if  ($density >= 150){
+                echo 'Dangerously numerous people'  . "<br>";
+            } else if ($density >= 80){
+                echo 'Too many people'  . "<br>";
+            } else if ($density >= 20){
+                echo 'Okay time' . "<br>";
+            }
+
+            $gridCell = $value['geometry']['coordinates'][0];
+
+
+            $gridData[] = $gridCell;
+
+        }
+
+        dd($gridData);
+
+
+    // $spouet = [
     //     "http" => [
     //         "method" => "GET",
-    //         "header" => array("Authorization:Bearer $_ENV['PROXITOKEN']",
-    //             "Accept:application/json",
-    //             "Content-Type:application/json")
+    //         "header" => array("")
     //     ]
     // ];
 
-    // $context = stream_context_create($opts);
+    // $context = stream_context_create($spouet);
     
-    // $response = file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/geojson', false, $context);
+    // $doudou = file_get_contents('https://kara.rest/bin/e57fb926-f926-403f-b7a2-90a50d59b451', true);  
+    
+    // dd($doudou);
 
     // $opts = [
     //     "http" => [
