@@ -19,6 +19,7 @@ class AlertFactory extends Factory
         return [
             'type' => $this->faker->word(),
             'description' => $this->faker->sentence(8),
+            'location_id' => $this->faker->numberBetween(1, 10)
 
         ];
     }

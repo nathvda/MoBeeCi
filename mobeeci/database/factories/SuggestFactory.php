@@ -17,7 +17,9 @@ class SuggestFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'description' => $this->faker->sentence(5),
+            'category' => $this->faker->word(),
+            'location_id' => $this->faker->numberBetween(1, 10)
         ];
     }
 }
