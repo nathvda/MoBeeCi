@@ -15,7 +15,7 @@
     <textarea id="description" name="description" form="alertes"></textarea>
     <label for="type">Type</label>
     <select name="type" id="type">
-        <option name="type" value="pmr">Pmr</option>
+        <option name="type" value="pmr"></option>Pmr</option>
         <option name="type" value="sensitivity">Sensibilité sensorielle</option>
         <option name="type" value="anxiety">Anxiété</option>
     </select>
