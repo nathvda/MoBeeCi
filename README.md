@@ -1,5 +1,8 @@
 # MoBeeCi
 A repo for the Hackaton Citizens of Wallonia
+# 
+![](https://media.licdn.com/dms/image/C4E22AQHze3oNQwprYA/feedshare-shrink_2048_1536/0/1678688944776?e=1681344000&v=beta&t=P8LYnqdGQsR7HUEExm6rpxwS00KUMIStXRq3JQTB5l8)
+# 
 
 ``POST /api/suggestions``
 
