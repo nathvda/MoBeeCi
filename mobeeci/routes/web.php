@@ -25,9 +25,9 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('auth');
 
-Route::get('/home', function(){
+Route::get('/home', function () {
     return view('home');
-},  ['locations' => Location::get()])->middleware('auth');
+},  ['locations' => Location::get()]);/*->middleware('auth');*/
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 
@@ -64,7 +64,7 @@ Route::get('/profile', [RegisterController::class, 'index'])->middleware('auth')
 
 Route::get('/preferences', [AccessibilityController::class, 'index'])->middleware('auth');
 
-Route::get('/flux', function(){
+Route::get('/flux', function () {
     $env = $_ENV['PROXITOKEN'];
 
     // $opts = [
@@ -77,7 +77,7 @@ Route::get('/flux', function(){
     // ];
 
     // $context = stream_context_create($opts);
-    
+
     // $response = file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/geojson', false, $context);
 
     // $infos = json_decode($response, true);
@@ -91,7 +91,7 @@ Route::get('/flux', function(){
     //     foreach($infos['features'] as $res=>$value){
 
     //         $gridCell = [];
-            
+
     //         echo $value['properties']['cellcode'] . "<br>";
     //         echo $stuff['data'][$res]['binId'] . "<br>";
 
@@ -123,9 +123,9 @@ Route::get('/flux', function(){
     ];
 
     $context = stream_context_create($spouet);
-    
-    $doudou = file_get_contents('https://kara.rest/bin/e57fb926-f926-403f-b7a2-90a50d59b451', true);  
-    
+
+    $doudou = file_get_contents('https://kara.rest/bin/e57fb926-f926-403f-b7a2-90a50d59b451', true);
+
     dd($doudou);
 
     // $opts = [
@@ -138,7 +138,7 @@ Route::get('/flux', function(){
     // ];
 
     // $context = stream_context_create($opts);
-    
+
     // return file_get_contents('https://api.enco.io/rtcm/1.0.0/zones/Charleroi_ring/', false, $context);
 
 
@@ -146,4 +146,3 @@ Route::get('/flux', function(){
     //     'data' => $response
     // ], 200);
 });
-

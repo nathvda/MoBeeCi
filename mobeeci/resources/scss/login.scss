@@ -2,68 +2,123 @@
 
 body {
 
-    section{
+    .login_wrapper {
         display: flex;
-        align-items: center;
+        height: 100%;
+        max-width: 500px;
+        margin: auto;
         flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
     }
+
+    .previous {
+        padding: 1rem;
+        text-align: left;
+        width: 80%;
+    }
+
     @include basic-page;
     margin: 0;
     padding: 0;
+    font-family:inter;
 
     .logo_wrapper {
         display: flex;
         align-content: center;
+        background-color: white;
+        padding: 1rem;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 100%;
+        justify-content: center;
+
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 50%;
+            translate: 0 -50%;
+            height: 6rem;
+            margin-top: 0;
+        }
     }
 
     form {
         @include center;
         flex-direction: column;
-        width: 90%;
+        width: 80%;
+        gap: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        border-radius: 0.4rem;
+
+        background-color: rgba(255, 255, 255, 0.2);
+
+        .inputbox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
 
         .email,
         .password,
         .login {
-            width: 100%;
-            border: none;
             margin: 2% 0;
-            border-radius: 50px;
-            height: 50px;
+            border-radius: 0.4rem;
+            border: 1px solid #b3742d;
+            padding: 1em;
+        }
+
+        input:focus {
+            outline: 0.2rem solid rgb(121, 121, 121);
+            outline-offset: 0.5rem;
         }
 
         .email .password {
-            border-radius: 50px;
             font-size: 25px;
             padding-left: 10px;
         }
 
-        label{
-            margin-left: 20px;
+        button {
+            margin: 10px;
+            font-size: 20px;
+            width: 100%;
+            padding: 0.5em;
+            transition: 0.5s;
+            border: 1px solid black;
+            border-radius: 0.4rem;
+            outline: 0;
+            outline-offset: 0;
+
         }
 
-        .login {
-            margin: 10px;
-            font-size: 30px;
-            width: 100%;
-            border-radius: 50px;
+        button:hover {
+            background-color: rgba(248, 121, 35, 0.5);
+            transition: 0.5s;
+            border: 1px solid black;
+
+            ;
+        }
+
+        button:active {
+            outline: 2px solid black;
+            outline-offset: 5px;
+            transition:
+                0.3s;
         }
 
         label {
             align-self: flex-start;
             font-size: 20px;
+            font-weight: bolder;
+            font-family: inter;
+            border-bottom: 0.2rem solid rgb(126, 75, 0);
+            padding-bottom: 0.2rem;
         }
-    }
-
-    .logo-brand {
-        position: relative;
-        top: 0;
-        width: 200px;
-        padding-top: 20px;
-        margin-top: 20px;
-    }
-
-    input{
-        border-radius: 50px;
     }
 
 }
