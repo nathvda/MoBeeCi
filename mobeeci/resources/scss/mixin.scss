@@ -2,9 +2,10 @@
 
 @mixin basic-page {
     background-color: #ffc288;
+    background-image: linear-gradient(0deg, #fa9b42, rgb(255, 207, 117));
     width: 100%;
     min-height: 100vh;
-    font-family: "Poppins", sans-serif;
+    font-family: inter;
     margin: 0;
     padding: 0;
 }
